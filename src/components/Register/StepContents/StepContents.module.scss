@@ -1,8 +1,3 @@
-.stepContents {
-  // 暫時固定高度
-  // height:50vh;
-}
-
 // 共用樣式
 .title {
   font-size: 24px;
@@ -11,6 +6,7 @@
 }
 
 label {
+  // 每個input標籤
   font-style: normal;
   font-weight: 700;
   font-size: 0.75rem;
@@ -20,6 +16,7 @@ label {
 }
 
 .formRow {
+  // 每個input-group
   display: flex;
   flex-flow: column;
   gap: 8px;

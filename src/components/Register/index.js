@@ -4,11 +4,12 @@ import ProgressControl from "./ProgressControl"
 import styles from './Register.module.scss'
 
 function Register() {
+  const currentStep = 3
   return (
     <div className={ styles.section_register }>
-      <StepProgress/> 
-      <StepContents />
-      <ProgressControl />
+      <StepProgress currentStep={currentStep} /> 
+      <StepContents currentStep={currentStep}/>
+      <ProgressControl currentStep={currentStep} />
     </div>
   )
 }

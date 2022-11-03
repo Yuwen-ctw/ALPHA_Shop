@@ -1,14 +1,13 @@
 import Address from './Address'
 import Shipping from './Shipping'
 import Checkout from './Checkout'
-import styles from './StepContents.module.scss'
 
-function StepContents() {
+function StepContents({ currentStep }) {
   return (
-    <form className={styles.stepContents }>
-    <Address />
-    <Shipping />
-    <Checkout />
+    <form>
+      <Address currentStep={currentStep} />
+      <Shipping currentStep={currentStep} />
+      <Checkout currentStep={currentStep} />
     </form>
   )
 }

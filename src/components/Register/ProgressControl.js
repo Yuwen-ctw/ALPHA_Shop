@@ -1,19 +1,20 @@
 import styles from './Register.module.scss'
 
-function ProgressControl() {
+function ProgressControl({ currentStep }) {
   return (
     <>
       <hr className={styles.divider} />
       <div className={styles.progressControl}>
-        <BackBtn currentStep={1}/>
-        <NextBtn currentStep={1} />
+        <BackBtn currentStep={currentStep}/>
+        <NextBtn currentStep={currentStep} />
       </div>
     </>
   )
 }
 export default ProgressControl
 
-function BackBtn({currentStep}) {
+function BackBtn({ currentStep }) {
+  // 若當前為 step1 會隱藏
   const visibility = currentStep === 1 ? 'hidden' : 'visible'
   return (
     <button type="button" className={styles.backBtn} style={{ visibility: `${visibility}` }}>
@@ -24,6 +25,7 @@ function BackBtn({currentStep}) {
 }
 
 function NextBtn({ currentStep }) {
+  // 若當前為 step3 則更換文字，並移除箭頭圖標
   const context = currentStep !== 3 ? '下一步' : '確認下單'
   const showArrow = currentStep !== 3 ? <ArrowToRight /> : ''
   return (

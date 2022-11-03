@@ -30,16 +30,24 @@
   text-align: center;
   background-color: #2A2A2A;
   color: white;
+  svg {
+    height: 100%;
+  }
 }
-
-.stepNumUndone {
+.stepNumDoing{
+  composes: stepNum;
+    background-color: white;
+    color: #2A2A2A;
+    box-shadow: 0 0 0 1px #2A2A2A inset;
+}
+.stepNumUndo {
   composes: stepNum;
   background-color: transparent;
   color: #AFB1BD;
   box-shadow: 0 0 0 1px #AFB1BD inset;
 }
 
-.stepNameUndone {
+.stepNameUndo {
   color: #AFB1BD;
 }
 
@@ -49,7 +57,7 @@
   border: 2px solid #000000;
 }
 
-.lineUndone {
+.lineUndo {
   composes: line;
   border: 2px solid #F0F0F5;
 }
@@ -87,23 +95,18 @@
     // 效果
     &:hover {
       cursor: pointer;
+      translate: -1px -1px;
     }
   }
   // button個別樣式
   .nextBtn {
     background-color: #F67599;
     color: #ffffff;
-    &:hover {
-      color: #cccccc;
-    }
   }
 
   .backBtn {
     justify-content: flex-start;
     background-color: transparent;
     color: #000000;
-    &:hover {
-        color: #cccccc;
-      }
   }
 }

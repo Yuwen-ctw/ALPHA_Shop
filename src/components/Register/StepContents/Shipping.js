@@ -1,7 +1,8 @@
 import styles from './StepContents.module.scss'
-function Shipping() {
+function Shipping({ currentStep }) {
+  const showPhase = currentStep === 2 ? '' : 'd-none'
   return (
-    <div className='d-none'>
+    <div className={showPhase}>
       <h3 className={styles.title}>運送方式</h3>
       <div className= {styles._shippingPhase}>
         <div className={styles.formRow}>
