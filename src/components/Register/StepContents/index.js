@@ -5,11 +5,11 @@ import styles from './StepContents.module.scss'
 
 function StepContents() {
   return (
-    <div className={styles.stepContents }>
+    <form className={styles.stepContents }>
     <Address />
     <Shipping />
     <Checkout />
-    </div>
+    </form>
   )
 }
 export default StepContents

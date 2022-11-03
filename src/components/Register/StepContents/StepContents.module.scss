@@ -3,12 +3,13 @@
   height:50vh;
 }
 
+// 共用樣式
 .title {
   font-size: 24px;
   font-weight: 700;
   margin: 1.5rem 0;
 }
-// 共用樣式
+
 label {
   font-style: normal;
   font-weight: 700;
@@ -19,6 +20,7 @@ label {
 }
 
 .formRow {
+  // 針對每一個input group
   display: flex;
   flex-flow: column;
   gap: 8px;
@@ -31,8 +33,9 @@ label {
     border-radius: 4px;
   }
 }
+
 // address專用樣式
-.addressForm {
+.addressPhase {
   display: flex;
   flex-wrap: wrap;
   gap:30px;
@@ -47,7 +50,7 @@ label {
     flex: 0 30%;
   }
   .formRow:nth-of-type(even) {
-    flex: 1;
+    flex: 1 1 auto;
   }
 }
 
@@ -63,10 +66,10 @@ label {
   color: #000000;
 
   input[type="radio"] {
-    // 重新設定radio
     width: 20px;
     height: 20px;
     margin: 20px;
+    // 自製radio樣式
     -webkit-appearance: none;
     border-radius: 50%;
     border: 1px solid #2A2A2A;
@@ -97,5 +100,19 @@ label {
     top: 13px;
     font-size: 12px;
     line-height: 16px;
+  }
+}
+
+// checkout專用樣式
+.checkoutPhase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  .formRow {
+    flex: 1 1 auto;
+  }
+  .formRow:nth-of-type(1),
+  .formRow:nth-of-type(2) {
+    flex: 0 65%;
   }
 }

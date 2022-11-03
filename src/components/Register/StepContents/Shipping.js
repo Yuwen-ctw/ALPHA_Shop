@@ -1,9 +1,9 @@
 import styles from './StepContents.module.scss'
 function Shipping() {
   return (
-    <div className=''>
+    <div className='none'>
       <h3 className={styles.title}>運送方式</h3>
-      <form>
+      <div className= {styles._shippingPhase}>
         <div className={styles.formRow}>
           <div className={ styles.radioWrapper }>
             <input type="radio" value="standard" name="shipping" checked />
@@ -22,7 +22,7 @@ function Shipping() {
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   )
 }

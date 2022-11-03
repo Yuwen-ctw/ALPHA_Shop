@@ -4,7 +4,7 @@ function Address() {
   return (
     <div className='none'>
       <h3 className={ styles.title }>寄送地址</h3>
-      <form className={ styles.addressForm }>
+      <div className={ styles.addressPhase }>
         <div className={ styles.formRow }>
         <label htmlFor="select-title">稱謂</label>
         <select id="select-title" name="title">
@@ -64,7 +64,7 @@ function Address() {
           <label htmlFor="input-address">地址</label>
           <input type="text" id="input-address" name="address" placeholder="請輸入地址" />
         </div>
-      </form>
+      </div>
     </div>
   )
 }

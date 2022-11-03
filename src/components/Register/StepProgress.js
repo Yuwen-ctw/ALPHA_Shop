@@ -15,7 +15,7 @@ export default StepProgress
 function Steps() {
   return (
     <div className={ styles.steps }>
-      <Step stepNum={1  } stepName={"寄送地址"} />
+      <Step stepNum={1} stepName={"寄送地址"} />
       <span className={ styles.connectLine }></span>
       <Step stepNum={2} stepName={"運送方式"} />
       <span className={styles.connectLine}></span>
