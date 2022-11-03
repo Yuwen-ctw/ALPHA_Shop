@@ -1,6 +1,10 @@
+:global(.hide) {
+    visibility: hidden;
+  }
 
 .section_register {
-  width: 536px;
+  // 暫時固定組件的寬度
+  width: 540px;
 }
 
 .stepProgress {
@@ -9,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    
     .step {
       display: flex;
       justify-content: center;
@@ -30,6 +34,61 @@
       width: 60px;
       height: 1px;
       background-color: black;
+    }
+  }
+}
+
+.divider {
+  margin: 1.5rem 0;
+  height: 2px;
+  border: 1px solid #E6E6EB;
+}
+
+.progressControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 174px;
+    height: 46px;
+    border: 0px;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .nextBtn {
+    background-color: #F67599;
+    color: #ffffff;
+    &:hover {
+      color: #cccccc;
+    }
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin-left: 12px;
+    }
+  }
+  .backBtn {
+    justify-content: flex-start;
+    background-color: transparent;
+    color: #000000;
+    &:hover {
+        color: #cccccc;
+      }
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin-right: 12px;
     }
   }
 }
