@@ -5,6 +5,13 @@
   padding: 0px;
   box-sizing: border-box;
 }
+.none {
+  display: none;
+}
+
+.hide {
+  visibility: hidden;
+}
 
 body {
   width: 100%;

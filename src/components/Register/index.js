@@ -1,7 +1,7 @@
 import StepProgress from "./StepProgress"
 import StepContents from "./StepContents"
 import ProgressControl from "./ProgressControl"
-import styles from './index.module.scss'
+import styles from './Register.module.scss'
 
 function Register() {
   return (
