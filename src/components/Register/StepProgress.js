@@ -20,7 +20,7 @@ function Steps() {
     </div>
   )
 }
-function Step({stepNum, stepName}) {
+function Step({ stepNum, stepName }) {
   return (
     <div>
       <span>{stepNum}</span>
