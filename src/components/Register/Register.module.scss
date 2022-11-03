@@ -15,16 +15,20 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
+
       .stepNum {
+        // 邊框
         width: 1.5rem;
         height: 1.5rem;
-        line-height: 1.5rem;
         border-radius: 50%;
+        // 內部效果
         background-color: black;
-        color: white;
+        line-height: 1.5rem;
         text-align: center;
+        color: white;
       }
     }
+
     .connectLine {
       display: block;
       width: 60px;
@@ -41,30 +45,30 @@
 }
 
 .progressControl {
+  // button分散對齊
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  // button共用樣式
   button {
+    // 位置
     display: flex;
     justify-content: center;
     align-items: center;
+    // 邊框
     width: 174px;
     height: 46px;
     border: 0px;
     border-radius: 8px;
+    // 字型
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
+    // 效果
     &:hover {
       cursor: pointer;
-    }
-  }
-  .nextBtn {
-    background-color: #F67599;
-    color: #ffffff;
-    &:hover {
-      color: #cccccc;
     }
     i {
       width: 1.5rem;
@@ -73,6 +77,15 @@
       margin-left: 12px;
     }
   }
+  // button個別樣式
+  .nextBtn {
+    background-color: #F67599;
+    color: #ffffff;
+    &:hover {
+      color: #cccccc;
+    }
+  }
+
   .backBtn {
     justify-content: flex-start;
     background-color: transparent;
@@ -80,11 +93,5 @@
     &:hover {
         color: #cccccc;
       }
-    i {
-      width: 1.5rem;
-      height: 1.5rem;
-      line-height: 1.5rem;
-      margin-right: 12px;
-    }
   }
 }

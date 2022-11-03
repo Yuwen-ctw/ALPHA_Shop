@@ -1,25 +1,29 @@
+import styles from './StepContents.module.scss'
 function Shipping() {
   return (
-    <form>
-      <h3>運送方式</h3>
-      <div>
-        <input type="radio" value="standard" name="shipping" checked />
-        <div>
-          <h4>標準運送</h4>
-          <p>約 3~7 個工作天</p>
-          <span>免費</span>
+    <div className=''>
+      <h3 className={styles.title}>運送方式</h3>
+      <form>
+        <div className={styles.formRow}>
+          <div className={ styles.radioWrapper }>
+            <input type="radio" value="standard" name="shipping" checked />
+            <div>
+              <h4 className={ styles.tetl }>標準運送</h4>
+              <p className={styles.description}>約 3~7 個工作天</p>
+              <span className={styles.price}>免費</span>
+            </div>
+          </div>
+          <div className={styles.radioWrapper}>
+            <input type="radio" value="dhl" name="shipping" />
+            <div>
+              <h4 className={styles.tetl}>DHL 貨運</h4>
+              <p className={styles.description}>48 小時內送達</p>
+              <span className={styles.price}>$500</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <input type="radio" value="dhl" name="shipping" />
-        <div>
-          <h4>DHL 貨運</h4>
-          <p>48 小時內送達</p>
-          <span>$500</span>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   )
 }
-
 export default Shipping

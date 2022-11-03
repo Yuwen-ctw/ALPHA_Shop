@@ -1,9 +1,37 @@
+.stepContents {
+  // 暫時固定高度
+  height:50vh;
+}
+
 .title {
   font-size: 24px;
   font-weight: 700;
   margin: 1.5rem 0;
 }
+// 共用樣式
+label {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #808080;
+  letter-spacing: 1px; 
+}
 
+.formRow {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+
+  input:not([type="radio"]),
+  select {
+    padding-left: 1rem;
+    height: 40px;
+    border: 1px solid #4A4A4A;
+    border-radius: 4px;
+  }
+}
+// address專用樣式
 .addressForm {
   display: flex;
   flex-wrap: wrap;
@@ -23,23 +51,51 @@
   }
 }
 
-label {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: #808080;
-  letter-spacing: 1px; 
-}
-.formRow {
+// shipping專用樣式
+.radioWrapper {
   display: flex;
-  flex-flow: column;
-  gap: 8px;
-  input,
-  select {
-    padding-left: 1rem;
-    height: 40px;
-    border: 1px solid #4A4A4A;
-    border-radius: 4px;
+  align-items: center;
+  position: relative;
+  // 字型
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  color: #000000;
+
+  input[type="radio"] {
+    // 重新設定radio
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    border: 1px solid #2A2A2A;
+    background-color: #FFFFFF;
+    &:hover {
+      box-shadow: 0 0 0 6px#cccccc inset;
+      border: none;
+    }
+    &:checked {
+      box-shadow: 0 0 0 6px#2A2A2A inset;
+      border: none;
+    }
+  }
+
+  .tetl {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .price {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    font-size: 12px;
+    line-height: 16px;
   }
 }
