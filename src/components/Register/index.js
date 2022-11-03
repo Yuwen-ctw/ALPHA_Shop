@@ -8,7 +8,6 @@ function Register() {
     <div className={ styles.section_register }>
       <StepProgress/> 
       <StepContents />
-      <hr className={styles.divider} />
       <ProgressControl />
     </div>
   )

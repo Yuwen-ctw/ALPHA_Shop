@@ -1,7 +1,7 @@
 import styles from './StepContents.module.scss'
 function Shipping() {
   return (
-    <div className='none'>
+    <div className='d-none'>
       <h3 className={styles.title}>運送方式</h3>
       <div className= {styles._shippingPhase}>
         <div className={styles.formRow}>

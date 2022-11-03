@@ -1,6 +1,6 @@
 .stepContents {
   // 暫時固定高度
-  height:50vh;
+  // height:50vh;
 }
 
 // 共用樣式
@@ -20,7 +20,6 @@ label {
 }
 
 .formRow {
-  // 針對每一個input group
   display: flex;
   flex-flow: column;
   gap: 8px;
@@ -28,13 +27,40 @@ label {
   input:not([type="radio"]),
   select {
     padding-left: 1rem;
+    width: 100%;
     height: 40px;
     border: 1px solid #4A4A4A;
     border-radius: 4px;
+    background-color: transparent;
+    -webkit-appearance: none;
+
+    &::placeholder {
+      color: #999999;
+      font-family: 'Noto Sans TC';
+    }
+  }
+  select:invalid {
+    color: #999999;
+  }
+}
+// 自製下拉箭頭
+:global(.select-wrap) {
+  position: relative;
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right:18px;
+    translate: 0 -50%;
+    border-color: #2A2A2A transparent;
+    border-style: solid;
+    border-width: 5px 4.5px 0px 4.5px;
   }
 }
 
-// address專用樣式
+// address component專用樣式
 .addressPhase {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +80,7 @@ label {
   }
 }
 
-// shipping專用樣式
+// shipping component專用樣式
 .radioWrapper {
   display: flex;
   align-items: center;
@@ -103,7 +129,7 @@ label {
   }
 }
 
-// checkout專用樣式
+// checkout component專用樣式
 .checkoutPhase {
   display: flex;
   flex-wrap: wrap;

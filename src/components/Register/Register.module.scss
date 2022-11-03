@@ -9,36 +9,53 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     .step {
+      flex-grow: 1;
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 8px;
-
-      .stepNum {
-        // 邊框
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 50%;
-        // 內部效果
-        background-color: black;
-        line-height: 1.5rem;
-        text-align: center;
-        color: white;
-      }
-    }
-
-    .connectLine {
-      display: block;
-      width: 60px;
-      height: 1px;
-      background-color: black;
     }
   }
 }
 
+.stepNum {
+  // 邊框
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  // 內部效果
+  line-height: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: #2A2A2A;
+  color: white;
+}
+
+.stepNumUndone {
+  composes: stepNum;
+  background-color: transparent;
+  color: #AFB1BD;
+  box-shadow: 0 0 0 1px #AFB1BD inset;
+}
+
+.stepNameUndone {
+  color: #AFB1BD;
+}
+
+.line {
+  margin: 0 auto;
+  width: 60px;
+  border: 2px solid #000000;
+}
+
+.lineUndone {
+  composes: line;
+  border: 2px solid #F0F0F5;
+}
+
 .divider {
+  width: 100%;
   margin: 1.5rem 0;
   height: 2px;
   border: 1px solid #E6E6EB;
@@ -56,6 +73,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12.5px;
     // 邊框
     width: 174px;
     height: 46px;
@@ -69,12 +87,6 @@
     // 效果
     &:hover {
       cursor: pointer;
-    }
-    i {
-      width: 1.5rem;
-      height: 1.5rem;
-      line-height: 1.5rem;
-      margin-left: 12px;
     }
   }
   // button個別樣式
