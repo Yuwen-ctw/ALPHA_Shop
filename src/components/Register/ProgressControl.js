@@ -1,3 +1,4 @@
+
 function ProgressControl() {
   return (
     <div>
@@ -6,5 +7,4 @@ function ProgressControl() {
     </div>
   )
 }
-
 export default ProgressControl

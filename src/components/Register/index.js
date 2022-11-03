@@ -1,15 +1,15 @@
 import StepProgress from "./StepProgress"
 import StepContents from "./StepContents"
 import ProgressControl from "./ProgressControl"
+import styles from './index.module.scss'
 
-function Checkout() {
+function Register() {
   return (
-    <div>
+    <div className={ styles.section_register }>
       <StepProgress/> 
       <StepContents />
       <ProgressControl />
     </div>
   )
 }
-
-export default Checkout
+export default Register
