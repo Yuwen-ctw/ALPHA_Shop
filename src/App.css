@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;700&display=swap');
 
+:root {
+  --bg: #ffffff;
+  --textColor: #2A2A2A;
+  /* register section */
+  --stepNumBg: #2A2A2A;
+  --stepNumColor: #ffffff;
+  --stepNumDoingColor: #2A2A2A;
+  --stepNumUndoColor: #AFB1BD;
+  --stepLineColor: #000000;
+  --stepLineUndoColor: #F0F0F5;
+  --dividerColor: #E6E6EB;
+  --nextBtnBg: #F67599;
+  --nextBtnColor: #ffffff;
+  --backBtnColor: #000000;
+
+  /* input */
+  --labelColor: #808080;
+  --placehoderColor: #999999;
+  --inputBorder: #4A4A4A;
+  --radioHoverColor: #cccccc;
+  
+}
 /* CSS RESET */
 * {
   margin: 0px;
@@ -17,7 +39,6 @@ body {
   font-family: 'Inter', 'Noto Sans TC', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: #2A2A2A;
 }
 
 ul,
@@ -27,5 +48,4 @@ li {
 
 a {
   text-decoration: none;
-  color: black;
 }

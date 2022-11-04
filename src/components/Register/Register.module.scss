@@ -28,45 +28,41 @@
   font-size: 0.75rem;
   font-weight: 700;
   text-align: center;
-  background-color: #2A2A2A;
-  color: white;
+  background-color: var(--stepNumBg);
+  color: var(--stepNumColor);
   svg {
     height: 100%;
   }
 }
 .stepNumDoing{
   composes: stepNum;
-    background-color: white;
-    color: #2A2A2A;
-    box-shadow: 0 0 0 1px #2A2A2A inset;
+    background-color: var(--bg);
+    color: var(--stepNumDoingColor);
+    box-shadow: 0 0 0 1px var(--stepNumDoingColor) inset;
 }
 .stepNumUndo {
   composes: stepNum;
-  background-color: transparent;
-  color: #AFB1BD;
-  box-shadow: 0 0 0 1px #AFB1BD inset;
-}
-
-.stepNameUndo {
-  color: #AFB1BD;
+  background-color: var(--bg);
+  color: var(--stepNumUndoColor);
+  box-shadow: 0 0 0 1px var(--stepNumUndoColor) inset;
 }
 
 .line {
   margin: 0 auto;
   width: 60px;
-  border: 2px solid #000000;
+  border: 2px solid var(--stepLineColor);
 }
 
 .lineUndo {
   composes: line;
-  border: 2px solid #F0F0F5;
+  border: 2px solid var(--stepLineUndoColor);
 }
 
 .divider {
   width: 100%;
   margin: 1.5rem 0;
   height: 2px;
-  border: 1px solid #E6E6EB;
+  border: 1px solid var(--dividerColor);
 }
 
 .progressControl {
@@ -100,13 +96,13 @@
   }
   // button個別樣式
   .nextBtn {
-    background-color: #F67599;
-    color: #ffffff;
+    background-color: var(--nextBtnBg);
+    color: var(--nextBtnColor);
   }
 
   .backBtn {
     justify-content: flex-start;
-    background-color: transparent;
-    color: #000000;
+    background-color: var(--bg);
+    color: var(--backBtnColor);
   }
 }
