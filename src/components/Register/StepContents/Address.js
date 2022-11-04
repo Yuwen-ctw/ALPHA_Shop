@@ -10,8 +10,8 @@ function Address({ currentStep }) {
         <div className={styles.formRow}>
           <label htmlFor="select-title">稱謂</label>
           <div className='select-wrap'>
-            <select id="select-title" name="title">
-              <option value="mr" selected>先生</option>
+            <select id="select-title" name="title" defaultValue={'mr'}>
+              <option value="mr">先生</option>
               <option value="ms">小姐</option>
               <option value="mx">不明</option>
             </select>
@@ -36,7 +36,7 @@ function Address({ currentStep }) {
         <div className={styles.formRow}>
           <label htmlFor="input-location">縣市</label>
           <div className='select-wrap'>
-            <select id="select-location" name="location" required>
+            <select id="select-location" name="location" required defaultValue={''}>
               <option value="">請選擇縣市</option>
               <option value="KLU">基隆市</option>
               <option value="TPH">新北市</option>
