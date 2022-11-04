@@ -1,19 +1,19 @@
 import styles from './StepContents.module.scss'
-function Shipping({ currentStep }) {
+function Shipping ({ currentStep }) {
   const showPhase = currentStep === 2 ? '' : 'd-none'
   return (
     <div className={showPhase}>
       <h3 className={styles.title}>運送方式</h3>
-      <div className= {styles._shippingPhase}>
+      <div className={styles._shippingPhase}>
         <div className={styles.formRow}>
           <InputRadioWrapper>
-            <input type="radio" value="standard" name="shipping" defaultChecked={true}/>
-            <InputRadioDetail telt={'標準運送'} description={'約 3~7 個工作天'} price={'免費'} />
+            <input type='radio' value='standard' name='shipping' defaultChecked />
+            <InputRadioDetail telt='標準運送' description='約 3~7 個工作天' price='免費' />
           </InputRadioWrapper>
 
           <InputRadioWrapper>
-            <input type="radio" value="dhl" name="shipping" />
-            <InputRadioDetail telt={'DHL 貨運'} description={'48 小時內送達'} price={'$500'}/>
+            <input type='radio' value='dhl' name='shipping' />
+            <InputRadioDetail telt='DHL 貨運' description='48 小時內送達' price='$500' />
           </InputRadioWrapper>
         </div>
       </div>
@@ -22,7 +22,7 @@ function Shipping({ currentStep }) {
 }
 export default Shipping
 
-function InputRadioWrapper({children}) {
+function InputRadioWrapper ({ children }) {
   return (
     <div className={styles.radioWrapper}>
       {children}
@@ -30,7 +30,7 @@ function InputRadioWrapper({children}) {
   )
 }
 
-function InputRadioDetail({ telt, description, price }) {
+function InputRadioDetail ({ telt, description, price }) {
   return (
     <div>
       <h4 className={styles.tetl}>{telt}</h4>
