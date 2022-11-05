@@ -1,8 +1,8 @@
 import './App.css';
-import Register from './components/Register'
+import Main from './components/Main';
 function App() {
   return (
-    <Register/>
+    <Main />
   )
 }
 

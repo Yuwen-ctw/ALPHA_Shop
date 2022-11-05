@@ -6,11 +6,11 @@ import styles from './Register.module.scss'
 function Register() {
   const currentStep = 1
   return (
-    <div className={styles.section_register}>
+    <section className={styles.section_register}>
       <StepProgress currentStep={currentStep} />
       <StepContents currentStep={currentStep} />
       <ProgressControl currentStep={currentStep} />
-    </div>
+    </section>
   )
 }
 export default Register
