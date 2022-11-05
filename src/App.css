@@ -35,6 +35,8 @@
 
 body {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   height: 100vh;
   font-family: 'Inter', 'Noto Sans TC', sans-serif;
   font-weight: 400;
@@ -48,4 +50,5 @@ li {
 
 a {
   text-decoration: none;
+  color: var(--textColor);
 }
