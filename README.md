@@ -17,4 +17,4 @@ http://localhost:3000 進入頁面。
 <br>
 <br>
 
-### 目前可透過變更" ./Register/index.js "中的currentStep變數(Line 7)，以切換檢視 Step1、Step2、Step3元件。
+### 目前可透過變更" ./Main/Register/Register.js "中的currentStep變數(Line 7)，以切換檢視 Step1、Step2、Step3元件。
