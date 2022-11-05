@@ -15,7 +15,7 @@ function Header() {
         <MenuItem title={'客製商品'} />
         <MenuItem title={'聯絡我們'} />
       </Menu>
-      <LogoWrap />
+      <LogoWrap className={styles.logo}/>
       <Menu>
         <Icon iconName={SearchIcon} alt={'search'}/>
         <Icon iconName={CartIcon} alt={'cart'}/>
@@ -42,9 +42,9 @@ function MenuItem({ title }) {
 }
 
 
-function LogoWrap () {
+function LogoWrap({ className }) {
   return (
-    <a href='/' className={styles.logo}>
+    <a href='/' className={className}>
       <img src={LogoIcon} alt='icon'/>
       <img src={AlphaShopIcon} alt='Logo'/>
     </a>

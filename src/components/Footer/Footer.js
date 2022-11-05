@@ -7,7 +7,7 @@ import styles from './Footer.module.scss'
 function Footer () {
   return (
     <footer className={styles.footer}>
-      <LogoWrap />
+      <LogoWrap className={ styles.logo}/>
       <Menu>
         <MenuTitle title={'客戶服務'}/>
         <MenuItem name={'運送說明'}/>
@@ -30,11 +30,11 @@ function Footer () {
       <Menu>
         <MenuTitle title={'追蹤 ALPHA SHOP'}/>
         <MenuItem name={'+886 02123-45678'}/>
-      </Menu>
-      <Menu>
-        <Icon iconName={FacebookIcon} alt={'Facebook'}/>
-        <Icon iconName={InsIcon} alt={'Ins'}/>
-        <Icon iconName={WechatIcon} alt={'Wechat'}/>
+        <IconWrap>
+          <Icon iconName={FacebookIcon} alt={'Facebook'}/>
+          <Icon iconName={InsIcon} alt={'Ins'}/>
+          <Icon iconName={WechatIcon} alt={'Wechat'}/>
+        </IconWrap>
       </Menu>
 
     </footer>
@@ -44,20 +44,20 @@ function Footer () {
 export default Footer
 
 function Menu({ children }) {
-  return (
-    <ul>
-      {children}
-    </ul>
-  )
+  return <ul className={styles.menu}>{children}</ul>
 }
 
 function MenuTitle( {title}) {
-  return <h3>{title}</h3>
+  return <h3 className={styles.title}>{title}</h3>
 }
 function MenuItem({ name }) {
   return (
-    <li><a href="/">{name}</a></li>
+    <li><a href="/" className={styles.menuItem}>{name}</a></li>
   )
+}
+
+function IconWrap ({ children }) {
+  return <ul className={styles.iconWrap}>{children}</ul>
 }
 
 function Icon({ iconName, alt }) {

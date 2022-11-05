@@ -1,0 +1,48 @@
+.footer {
+  width: 100%;
+  padding: 0 7.5%;
+  height: 284px;
+  background-color: var(--footerBg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+      img {
+        vertical-align: middle;
+        &:last-child {
+          margin-left: 10px;
+          // 垂直置中微調
+          margin-top: 3px;
+        }
+      }
+    }
+
+  .menu {
+    height: 100%;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .title {
+      padding-bottom: 16px;
+      font-family: 'Noto Sans TC';
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--textColor)
+    }
+
+    .menuItem {
+      font-family: 'Noto Sans TC';
+      font-weight: 400;
+      color: var(--labelColor);
+      padding-left: 4px;
+    }
+
+    .iconWrap {
+      display: flex;
+      gap: 18px;
+    }
+  }
+}

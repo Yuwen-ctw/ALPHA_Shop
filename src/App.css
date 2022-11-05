@@ -21,6 +21,8 @@
   --inputBorder: #4A4A4A;
   --radioHoverColor: #cccccc;
   
+  /* footer */
+  --footerBg: #F6F7F8;
 }
 /* CSS RESET */
 * {
