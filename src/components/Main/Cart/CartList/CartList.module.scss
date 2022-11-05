@@ -1,0 +1,57 @@
+// 購物車清單
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .cartItem {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    .img {
+      width: 100px;
+      border-radius: 8px;
+    }
+
+    .detail {
+      position: relative;
+      margin-left: 21px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      .itemName {
+        font-family: 'Noto Sans TC';
+      }
+
+      .amountWrapper {
+        display: flex;
+        align-items: center;
+
+        .itemAmount {
+          width: 54px;
+          margin: 0 5px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 0.875rem;
+        }
+
+        svg {
+          cursor: pointer;
+        }
+      }
+
+      .itemCost {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-family: 'Noto Sans TC';
+        font-weight: 700;
+        line-height: 22px;
+        color: var(--stepLineColor);
+      }
+    }
+  }
+}

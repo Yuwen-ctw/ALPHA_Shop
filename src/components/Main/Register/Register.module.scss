@@ -1,11 +1,16 @@
 .section_register {
   // 暫時固定組件的寬度
   width: 540px;
+  display: flex;
+  flex-direction: column;
+  & > form {
+    flex-grow: 1;
+  }
 }
 
 .stepProgress {
   .steps {
-    margin: 3rem 0;
+    margin-bottom: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

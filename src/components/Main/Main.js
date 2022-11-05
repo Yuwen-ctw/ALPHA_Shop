@@ -5,8 +5,11 @@ import styles from './Main.module.scss'
 function Main () {
   return (
     <main className={styles.main}>
-      <Register />
-      <Cart />
+      <h1 className={styles.title}>結帳</h1>
+      <div className={styles.wrapper}>
+        <Register />
+        <Cart />
+      </div>
     </main>
   )
 }

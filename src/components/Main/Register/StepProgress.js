@@ -2,12 +2,9 @@ import styles from './Register.module.scss'
 
 function StepProgress ({ currentStep }) {
   return (
-    <>
       <div className={styles.stepProgress}>
-        <h1 className={styles.title}>結帳</h1>
         <Steps currentStep={currentStep} />
       </div>
-    </>
   )
 }
 
