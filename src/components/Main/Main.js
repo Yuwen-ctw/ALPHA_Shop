@@ -6,6 +6,7 @@ function Main () {
   return (
     <main className={styles.main}>
       <Register />
+      <Cart />
     </main>
   )
 }
