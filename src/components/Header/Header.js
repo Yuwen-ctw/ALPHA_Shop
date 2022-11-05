@@ -17,9 +17,9 @@ function Header() {
       </Menu>
       <LogoWrap />
       <Menu>
+        <Icon iconName={SearchIcon} alt={'search'}/>
         <Icon iconName={CartIcon} alt={'cart'}/>
         <Icon iconName={DarkModeIcon} alt={'dark-mood'}/>
-        <Icon iconName={SearchIcon} alt={'search'}/>
       </Menu>
     </header>
   )
@@ -29,7 +29,7 @@ export default Header
 
 function Menu({ children }) {
   return (
-    <ul>
+    <ul className={styles.menu}>
       {children}
     </ul>
   )
@@ -37,14 +37,14 @@ function Menu({ children }) {
 
 function MenuItem({ title }) {
   return (
-    <li><a href="/">{title}</a></li>
+    <li><a href="/" className={styles.menuItem}>{title}</a></li>
   )
 }
 
 
 function LogoWrap () {
   return (
-    <a href='/'>
+    <a href='/' className={styles.logo}>
       <img src={LogoIcon} alt='icon'/>
       <img src={AlphaShopIcon} alt='Logo'/>
     </a>
