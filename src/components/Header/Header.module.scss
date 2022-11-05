@@ -22,5 +22,14 @@
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+
+    img {
+      vertical-align: middle;
+      &:last-child {
+        margin-left: 10px;
+        // 垂直置中微調
+        margin-top: 3px;
+      }
+    }
   }
 }

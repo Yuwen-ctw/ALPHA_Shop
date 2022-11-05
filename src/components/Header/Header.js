@@ -51,6 +51,8 @@ function LogoWrap () {
   )
 }
 
+export {LogoWrap} 
+
 function Icon ({ iconName, alt }) {
   return <li><a href='/'><img src={iconName} alt={alt}></img></a></li>
 }
