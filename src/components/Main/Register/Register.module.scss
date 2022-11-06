@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+%stepNameBase {
+  display: none;
+}
+
 %lineBase {
   margin: 0 auto;
   width: 60px;
@@ -17,20 +21,26 @@
 
 .section_register {
   // 暫時固定組件的寬度
-  width: 540px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   & > form {
     flex-grow: 1;
   }
+  @media screen and (min-width: 750px) {
+    width: 540px;
+    align-self: stretch;
+  }
 }
 
 .stepProgress {
   .steps {
-    margin-bottom: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (min-width: 750px) {
+      margin-bottom: 3rem;
+    }
     .step {
       flex-grow: 1;
       display: flex;
@@ -57,7 +67,20 @@
         color: var(--stepNumUndoColor);
         box-shadow: 0 0 0 1px var(--stepNumUndoColor) inset;
       }
-      
+      .stepName {
+        @extend %stepNameBase;
+        @media screen and (min-width: 750px) {
+          display: block;
+        }
+      }
+
+      .stepNameUndo {
+        @extend %stepNameBase;
+        color: var(--stepNumUndoColor);
+        @media screen and (min-width: 750px) {
+          display: block;
+        }
+      }
       .line {
         @extend %lineBase;
         border: 2px solid var(--stepLineColor);
@@ -79,10 +102,23 @@
 }
 
 .progressControl {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  translate: 0 100%;
+  @media screen and (min-width: 750px) {
+    all: unset;
+  }
+}
+
+.btnControl {
   // button分散對齊
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (min-width: 750px) {
+    // justify-content: flex-end;
+  }
   
   // button共用樣式
   button {
@@ -109,8 +145,15 @@
   }
   // button個別樣式
   .nextBtn {
+    &:only-of-type {
+      width: 100%;
+    }
+    margin-left: auto;
     background-color: var(--nextBtnBg);
     color: var(--nextBtnColor);
+    @media screen and (min-width: 750px) {
+      width: 174px;
+    }
   }
 
   .backBtn {

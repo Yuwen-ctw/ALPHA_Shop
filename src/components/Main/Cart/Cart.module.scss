@@ -1,22 +1,31 @@
 .section_cart {
   // 暫時固定組件的寬度
-  width: 440px;
+  width: 100%;
+  margin-top: 32px;
   padding: 32px 24px;
   border: 1px solid var(--stepLineUndoColor);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+  @media screen and (min-width: 750px){
+    width: 440px;
+    margin: 0px;
+  }
 
   .title {
-    margin-bottom: 2rem 0;
-    font-family: 'Noto Sans TC';
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--textColor);
+    display: none;
+    @media screen and (min-width: 750px) {
+      display: block;
+      font-family: 'Noto Sans TC';
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--textColor);
+    }
   }
 
   .CartInfo {
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 32px;

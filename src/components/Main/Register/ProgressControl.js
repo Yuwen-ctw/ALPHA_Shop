@@ -2,22 +2,22 @@ import styles from './Register.module.scss'
 
 function ProgressControl ({ currentStep }) {
   return (
-    <>
+    <div className={styles.progressControl}>
       <hr className={styles.divider} />
-      <div className={styles.progressControl}>
+      <div className={styles.btnControl}>
         <BackBtn currentStep={currentStep} />
         <NextBtn currentStep={currentStep} />
       </div>
-    </>
+    </div>
   )
 }
 export default ProgressControl
 
 function BackBtn ({ currentStep }) {
-  // 若當前為 step1 會隱藏
-  const visibility = currentStep === 1 ? 'hidden' : 'visible'
+  // 若當前為 step1 則display: none
+  const display = currentStep === 1 ? 'none' : 'block'
   return (
-    <button type='button' className={styles.backBtn} style={{ visibility: `${visibility}` }}>
+    <button type='button' className={styles.backBtn} style={{ display: `${display}` }}>
       <ArrowToLeft />
       上一步
     </button>
