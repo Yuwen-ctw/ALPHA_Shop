@@ -27,69 +27,61 @@
   & > form {
     flex-grow: 1;
   }
-  @media screen and (min-width: 750px) {
-    width: 540px;
-    align-self: stretch;
-  }
 }
 
-.stepProgress {
-  .steps {
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .step {
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    @media screen and (min-width: 750px) {
-      margin-bottom: 3rem;
+    gap: 8px;
+    
+    .stepNum {
+      @extend %stepNumBase;
+      background-color: var(--stepNumBg);
+      color: var(--stepNumColor);
+      svg {
+        height: 100%;
+      }
     }
-    .step {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      
-      .stepNum {
-        @extend %stepNumBase;
-        background-color: var(--stepNumBg);
-        color: var(--stepNumColor);
-        svg {
-          height: 100%;
-        }
-      }
-      .stepNumDoing{
-        @extend %stepNumBase;
-          background-color: var(--bg);
-          color: var(--stepNumDoingColor);
-          box-shadow: 0 0 0 1px var(--stepNumDoingColor) inset;
-      }
-      .stepNumUndo {
-        @extend %stepNumBase;
+    .stepNumDoing{
+      @extend %stepNumBase;
         background-color: var(--bg);
-        color: var(--stepNumUndoColor);
-        box-shadow: 0 0 0 1px var(--stepNumUndoColor) inset;
+        color: var(--stepNumDoingColor);
+        box-shadow: 0 0 0 1px var(--stepNumDoingColor) inset;
+    }
+    .stepNumUndo {
+      @extend %stepNumBase;
+      background-color: var(--bg);
+      color: var(--stepNumUndoColor);
+      box-shadow: 0 0 0 1px var(--stepNumUndoColor) inset;
+    }
+    .stepName {
+      @extend %stepNameBase;
+      @media screen and (min-width: 750px) {
+        display: block;
       }
-      .stepName {
-        @extend %stepNameBase;
-        @media screen and (min-width: 750px) {
-          display: block;
-        }
-      }
+    }
 
-      .stepNameUndo {
-        @extend %stepNameBase;
-        color: var(--stepNumUndoColor);
-        @media screen and (min-width: 750px) {
-          display: block;
-        }
+    .stepNameUndo {
+      @extend %stepNameBase;
+      color: var(--stepNumUndoColor);
+      @media screen and (min-width: 750px) {
+        display: block;
       }
-      .line {
-        @extend %lineBase;
-        border: 2px solid var(--stepLineColor);
-      }
-      
-      .lineUndo {
-        @extend %lineBase;
-        border: 2px solid var(--stepLineUndoColor);
-      }
+    }
+    .line {
+      @extend %lineBase;
+      border: 2px solid var(--stepLineColor);
+    }
+    
+    .lineUndo {
+      @extend %lineBase;
+      border: 2px solid var(--stepLineUndoColor);
     }
   }
 }
@@ -116,9 +108,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (min-width: 750px) {
-    // justify-content: flex-end;
-  }
   
   // button共用樣式
   button {
@@ -145,15 +134,9 @@
   }
   // button個別樣式
   .nextBtn {
-    &:only-of-type {
-      width: 100%;
-    }
     margin-left: auto;
     background-color: var(--nextBtnBg);
     color: var(--nextBtnColor);
-    @media screen and (min-width: 750px) {
-      width: 174px;
-    }
   }
 
   .backBtn {
@@ -161,4 +144,20 @@
     background-color: var(--bg);
     color: var(--backBtnColor);
   }
+}
+
+@media screen and (min-width: 750px) {
+  .section_register {
+    width: 540px;
+    align-self: stretch;
+  }
+
+  .steps {
+      margin-bottom: 3rem;
+  }
+
+  .progressControl {
+    all: unset;
+  }
+
 }

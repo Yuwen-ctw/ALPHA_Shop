@@ -2,7 +2,7 @@ import styles from './Register.module.scss'
 
 function StepProgress ({ currentStep }) {
   return (
-      <div className={styles.stepProgress}>
+      <div>
         <Steps currentStep={currentStep} />
       </div>
   )

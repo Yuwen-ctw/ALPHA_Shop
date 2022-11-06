@@ -8,20 +8,9 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  @media screen and (min-width: 750px){
-    width: 440px;
-    margin: 0px;
-  }
 
   .title {
     display: none;
-    @media screen and (min-width: 750px) {
-      display: block;
-      font-family: 'Noto Sans TC';
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--textColor);
-    }
   }
 
   .CartInfo {
@@ -35,7 +24,7 @@
       padding-top: 1rem;
       display: flex;
       justify-content: space-between;
-      font-family: 'Noto Sans TC';
+      font-family: "Noto Sans TC";
       font-size: 0.875rem;
 
       .infoText {
@@ -46,6 +35,21 @@
         font-weight: 700;
         line-height: 17px;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .section_cart {
+    width: 440px;
+    margin: 0px;
+
+    .title {
+      display: block;
+      font-family: "Noto Sans TC";
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--textColor);
     }
   }
 }

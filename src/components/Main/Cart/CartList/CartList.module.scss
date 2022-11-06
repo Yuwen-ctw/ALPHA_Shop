@@ -23,10 +23,6 @@
     display: flex;
     justify-content: space-between;
     padding-right: 50px;
-    @media screen and (min-width: 750px) {
-      justify-content: flex-start;
-      padding-right: unset;
-    }
 
     .img {
       width: 100px;
@@ -39,16 +35,10 @@
       display: flex;
       flex-direction: column;
       gap: 18px;
-      @media screen and (min-width: 750px) {
-        flex-grow: 1;
-      }
 
       .itemName {
         font-family: 'Noto Sans TC';
         text-align: end;
-        @media screen and (min-width: 750px) {
-          text-align: start;
-        }
       }
 
       .amountWrapper {
@@ -74,7 +64,25 @@
         line-height: 22px;
         color: var(--stepLineColor);
         text-align: end;
-        @media screen and (min-width: 750px) {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .cartList {
+    .cartItem {
+      justify-content: flex-start;
+      padding-right: unset;
+
+      .detail {
+        flex-grow: 1;
+
+        .itemName {
+          text-align: start;
+        }
+
+        .itemCost {
           text-align: start;
           position: absolute;
           top: 0;

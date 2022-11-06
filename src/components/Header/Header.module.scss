@@ -7,10 +7,6 @@
   gap: 25px;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 750px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 
   .NavToggleIcon {
     padding: 20px 0 40px 0;
@@ -18,9 +14,6 @@
     width: 20px;
     height: 15px;
     align-self: flex-start;
-    @media screen and (min-width: 750px) {
-      display: none;
-    }
   }
   .classMenu {
     width: 100%;
@@ -29,17 +22,11 @@
     flex-direction: column;
     gap: 32px;
     text-align: center;
-    @media screen and (min-width: 750px) {
-      visibility: visible;
-      flex-direction: row;
-    }
+
     & > li {
       height: 72px;
       line-height: 72px;
       border-bottom: 1px solid rgba(42, 42, 42, 0.1);
-      @media screen and (min-width: 750px) {
-        border-bottom: unset;
-      }
     }
     
     .menuItem {
@@ -53,9 +40,6 @@
     display: flex;
     gap: 32px;
     text-align: center;
-    @media screen and (min-width: 750px) {
-      visibility: visible;
-    }
   }
   
   .logo {
@@ -71,6 +55,30 @@
         // 垂直置中微調
         margin-top: 3px;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .NavToggleIcon {
+      display: none;
+    }
+
+    .classMenu {
+      visibility: visible;
+      flex-direction: row;
+
+      & > li {
+        border-bottom: unset;
+      }
+    }
+
+    .iconMenu {
+      visibility: visible;
     }
   }
 }
