@@ -1,3 +1,20 @@
+%stepNumBase {
+  // 邊框
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  // 內部效果
+  line-height: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+%lineBase {
+  margin: 0 auto;
+  width: 60px;
+}
+
 .section_register {
   // 暫時固定組件的寬度
   width: 540px;
@@ -19,48 +36,39 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      
+      .stepNum {
+        @extend %stepNumBase;
+        background-color: var(--stepNumBg);
+        color: var(--stepNumColor);
+        svg {
+          height: 100%;
+        }
+      }
+      .stepNumDoing{
+        @extend %stepNumBase;
+          background-color: var(--bg);
+          color: var(--stepNumDoingColor);
+          box-shadow: 0 0 0 1px var(--stepNumDoingColor) inset;
+      }
+      .stepNumUndo {
+        @extend %stepNumBase;
+        background-color: var(--bg);
+        color: var(--stepNumUndoColor);
+        box-shadow: 0 0 0 1px var(--stepNumUndoColor) inset;
+      }
+      
+      .line {
+        @extend %lineBase;
+        border: 2px solid var(--stepLineColor);
+      }
+      
+      .lineUndo {
+        @extend %lineBase;
+        border: 2px solid var(--stepLineUndoColor);
+      }
     }
   }
-}
-
-.stepNum {
-  // 邊框
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  // 內部效果
-  line-height: 1.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-align: center;
-  background-color: var(--stepNumBg);
-  color: var(--stepNumColor);
-  svg {
-    height: 100%;
-  }
-}
-.stepNumDoing{
-  composes: stepNum;
-    background-color: var(--bg);
-    color: var(--stepNumDoingColor);
-    box-shadow: 0 0 0 1px var(--stepNumDoingColor) inset;
-}
-.stepNumUndo {
-  composes: stepNum;
-  background-color: var(--bg);
-  color: var(--stepNumUndoColor);
-  box-shadow: 0 0 0 1px var(--stepNumUndoColor) inset;
-}
-
-.line {
-  margin: 0 auto;
-  width: 60px;
-  border: 2px solid var(--stepLineColor);
-}
-
-.lineUndo {
-  composes: line;
-  border: 2px solid var(--stepLineUndoColor);
 }
 
 .divider {
