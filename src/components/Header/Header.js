@@ -3,33 +3,43 @@ import AlphaShopIcon from '../../svg/header/ALPHA Shop.svg'
 import CartIcon from '../../svg/header/Cart.svg'
 import DarkModeIcon from '../../svg/header/DarkMode.svg'
 import SearchIcon from '../../svg/header/Search.svg'
+import NavToggle from '../../svg/header/Vector.svg'
 import styles from './Header.module.scss'
 
 function Header() {
   return (
     <header className={styles.header}>
-      <Menu>
+      <NavToggleIcon />
+      <Menu className={styles.classMenu}>
         <MenuItem title={'男款'} />
         <MenuItem title={'女款'} />
         <MenuItem title={'最新消息'} />
         <MenuItem title={'客製商品'} />
         <MenuItem title={'聯絡我們'} />
       </Menu>
-      <LogoWrap className={styles.logo}/>
-      <Menu>
+      <Menu className={styles.iconMenu}>
         <Icon iconName={SearchIcon} alt={'search'}/>
         <Icon iconName={CartIcon} alt={'cart'}/>
         <Icon iconName={DarkModeIcon} alt={'dark-mood'}/>
       </Menu>
+      <LogoWrap className={styles.logo}/>
     </header>
   )
 }
 
 export default Header
 
-function Menu({ children }) {
+function NavToggleIcon() {
   return (
-    <ul className={styles.menu}>
+    <div className={styles.NavToggleIcon}>
+      <img src={NavToggle} alt='NavToggle'></img>
+    </div>
+  )
+}
+
+function Menu({ children, className }) {
+  return (
+    <ul className={className}>
       {children}
     </ul>
   )
