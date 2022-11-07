@@ -18,9 +18,9 @@ function Header() {
         <MenuItem title={'聯絡我們'} />
       </Menu>
       <Menu className={styles.iconMenu}>
-        <Icon iconName={SearchIcon} alt={'search'}/>
-        <Icon iconName={CartIcon} alt={'cart'}/>
-        <Icon iconName={DarkModeIcon} alt={'dark-mood'}/>
+        <Icon src={SearchIcon} alt={'search'}/>
+        <Icon src={CartIcon} alt={'cart'}/>
+        <Icon src={DarkModeIcon} alt={'dark-mood'}/>
       </Menu>
       <LogoWrap className={styles.logo}/>
     </header>
@@ -63,6 +63,6 @@ function LogoWrap({ className }) {
 
 export {LogoWrap} 
 
-function Icon ({ iconName, alt }) {
-  return <li><a href='/'><img src={iconName} alt={alt}></img></a></li>
+function Icon ({ src, alt }) {
+  return <li><a href='/'><img src={src} alt={alt}></img></a></li>
 }
