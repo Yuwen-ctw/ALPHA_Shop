@@ -1,7 +1,7 @@
 import styles from './StepContents.module.scss'
 
-function Address ({ currentStep }) {
-  const showPhase = currentStep === 1 ? '' : 'd-none'
+function Address ({ step }) {
+  const showPhase = step === 1 ? '' : 'd-none'
   return (
     <div className={showPhase}>
       <h3 className={styles.title}>寄送地址</h3>

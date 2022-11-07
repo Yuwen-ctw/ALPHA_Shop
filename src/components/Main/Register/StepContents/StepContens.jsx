@@ -2,12 +2,12 @@ import Address from './Address'
 import Shipping from './Shipping'
 import Checkout from './Checkout'
 
-function StepContents ({ currentStep }) {
+function StepContents ({ step }) {
   return (
-    <form>
-      <Address currentStep={currentStep} />
-      <Shipping currentStep={currentStep} />
-      <Checkout currentStep={currentStep} />
+    <form id='register'>
+      <Address step={step} />
+      <Shipping step={step} />
+      <Checkout step={step} />
     </form>
   )
 }

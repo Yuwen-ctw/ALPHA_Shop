@@ -1,7 +1,7 @@
 import styles from './StepContents.module.scss'
 
-function Checkout ({ currentStep }) {
-  const showPhase = currentStep === 3 ? '' : 'd-none'
+function Checkout ({ step }) {
+  const showPhase = step === 3 ? '' : 'd-none'
   return (
     <div className={showPhase}>
       <h3 className={styles.title}>付款資訊</h3>
