@@ -1,5 +1,5 @@
-import Register from "./Register"
-import Cart from "./Cart"
+import Register from './Register'
+import Cart from './Cart'
 import styles from './Main.module.scss'
 
 function Main () {

@@ -37,4 +37,3 @@ function NextBtn ({ currentStep }) {
     </button>
   )
 }
-

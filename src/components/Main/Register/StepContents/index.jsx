@@ -1,3 +1,3 @@
-import StepContents from "./StepContens";
+import StepContents from './StepContens'
 
 export default StepContents

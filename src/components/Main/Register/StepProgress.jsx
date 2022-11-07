@@ -2,9 +2,9 @@ import styles from './Register.module.scss'
 
 function StepProgress ({ currentStep }) {
   return (
-      <div>
-        <Steps currentStep={currentStep} />
-      </div>
+    <div>
+      <Steps currentStep={currentStep} />
+    </div>
   )
 }
 

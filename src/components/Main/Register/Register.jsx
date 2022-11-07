@@ -3,7 +3,7 @@ import StepContents from './StepContents'
 import ProgressControl from './ProgressControl'
 import styles from './Register.module.scss'
 
-function Register() {
+function Register () {
   const currentStep = 1
   return (
     <section className={styles.section_register}>
