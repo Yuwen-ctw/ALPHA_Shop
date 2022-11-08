@@ -1,9 +1,5 @@
-import LogoIcon from '../../svg/header/LogoIcon.svg'
-import AlphaShopIcon from '../../svg/header/ALPHA Shop.svg'
-import CartIcon from '../../svg/header/Cart.svg'
-import DarkModeIcon from '../../svg/header/DarkMode.svg'
-import SearchIcon from '../../svg/header/Search.svg'
 import NavToggle from '../../svg/header/Vector.svg'
+import { changeDarkMood } from '../utilities'
 import styles from './Header.module.scss'
 
 function Header () {
@@ -18,11 +14,11 @@ function Header () {
         <MenuItem title='聯絡我們' />
       </Menu>
       <Menu className={styles.iconMenu}>
-        <Icon src={SearchIcon} alt='search' />
-        <Icon src={CartIcon} alt='cart' />
-        <Icon src={DarkModeIcon} alt='dark-mood' />
+        <Icon iconName={'searchIcon'} />
+        <Icon iconName={'cartIcon'} />
+        <DarkIcon />
       </Menu>
-      <LogoWrap className={styles.logo} />
+      <LogoWrap className={styles.logo}/>
     </header>
   )
 }
@@ -54,14 +50,24 @@ function MenuItem ({ title }) {
 function LogoWrap ({ className }) {
   return (
     <a href='/' className={className}>
-      <img src={LogoIcon} alt='icon' />
-      <img src={AlphaShopIcon} alt='Logo' />
+      <span className={'logoIcon'}></span>
+      <span className={'logoName'}></span>
     </a>
   )
 }
 
 export { LogoWrap }
 
-function Icon ({ src, alt }) {
-  return <li><a href='/'><img src={src} alt={alt} /></a></li>
+function Icon ({ iconName }) {
+  return <li><a href='/' className={styles[iconName]}> </a></li>
+}
+
+function DarkIcon () {
+  return (
+    <li>
+      <input type='checkbox' id='dark-mood' style={{display: 'none'}}
+          onChange={e => changeDarkMood(e)}/>
+        <label htmlFor='dark-mood' className={styles.darkIcon}></label>
+    </li>
+  )
 }

@@ -40,23 +40,32 @@
     display: flex;
     gap: 32px;
     text-align: center;
+    & > li > * {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+    .searchIcon {
+      background-image: var(--searchIcon);
+    }
+    .cartIcon {
+      background-image: var(--cartIcon);
+    }
+    .darkIcon {
+      background-image: var(--darkModeIcon);
+    }
   }
   
   .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 170px;
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-
-    img {
-      vertical-align: middle;
-      &:last-child {
-        margin-left: 10px;
-        // 垂直置中微調
-        margin-top: 3px;
-      }
-    }
-  }
+  } 
 }
 
 @media screen and (min-width: 750px) {

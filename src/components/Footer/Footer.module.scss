@@ -11,18 +11,14 @@
   justify-content: space-between;
   
   .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 170px;
+    height: 30px;
     grid-column: 1 / 3;
     text-align: center;
-      img {
-        vertical-align: middle;
-        &:last-child {
-          margin-left: 10px;
-          // 垂直置中微調
-          margin-top: 3px;
-        }
-      }
-    }
-
+  }
   .menu {
     height: 100%;
     padding-top: 64px;
@@ -41,6 +37,7 @@
     }
 
     .menuItem {
+
       font-family: 'Noto Sans TC';
       font-weight: 400;
       color: var(--labelColor);

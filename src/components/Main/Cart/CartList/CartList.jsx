@@ -1,5 +1,3 @@
-import PlusSvg from '../../../../svg/main/Plus.svg'
-import MinusSvg from '../../../../svg/main/Minus.svg'
 import styles from './CartList.module.scss'
 import { numberWithCommas } from '../../../utilities'
 
@@ -22,9 +20,9 @@ function CartList ({ carts, setCarts }) {
     return (
       <div className={styles.cartItem} key={item.id}>
         <ItemDetail item={item}>
-          <img src={MinusSvg} alt='minusIcon' onClick={() => decreaseQuantity(item.id)} />
+          <span className={styles.minus} onClick={() => decreaseQuantity(item.id)}></span>
           <span className={styles.itemAmount}>{item.quantity}</span>
-          <img src={PlusSvg} alt='plusIcon' onClick={() => increaseQuantity(item.id)} />
+          <span className={styles.plus} onClick={() => increaseQuantity(item.id)}></span>
         </ItemDetail>
       </div>
     )

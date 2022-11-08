@@ -20,9 +20,72 @@
   --placehoderColor: #999999;
   --inputBorder: #4A4A4A;
   --radioHoverColor: #cccccc;
-  
+  --shipDescriptionColor: #2A2A2A;
+  --radioBorderColor: #2A2A2A;
+  --radioShadowColor: #2A2A2A;
+  --radioBg:#ffffff;
+  --selectColor: #999999;
+  /* cartlist scrollbar */
+  --scrollBg: rgba(0, 0, 0, 0.1);
+  --scrollHoverBg: rgba(0, 0, 0, 0.5);
+
   /* footer */
   --footerBg: #F6F7F8;
+
+  /* Icons */
+  --alphaShop: url('./svg/header/ALPHA Shop.svg');
+  --searchIcon: url('./svg/header/Search.svg');
+  --cartIcon: url('./svg/header/Cart.svg');
+  --darkModeIcon: url('./svg/header/DarkMode.svg');
+  --logoIcon: url('./svg/header/LogoIcon.svg');
+  --logoName: url('./svg/header/ALPHA Shop.svg');
+  --arrowL: url('./svg/main/ArrowL.svg');
+  --arrowR: url('./svg/main/ArrowR.svg');
+  --minusIcon: url('./svg/main/Minus.svg');
+  --plusIcon: url('./svg/main/Plus.svg');
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --textColor: rgba(255, 255, 255, 0.9);
+  /* register section */
+  --stepNumBg: #333333;
+  --stepNumColor: #ffffff;
+  --stepNumDoingColor: #ffffff;
+  --stepNumUndoColor: rgba(255, 255, 255, 0.4); 
+  --stepLineColor: #ffffff;
+  --stepLineUndoColor: rgba(240, 240, 245, 0.4);
+  --dividerColor: rgba(255, 255, 255, 0.2);
+  --nextBtnBg: #F67599;
+  --nextBtnColor: #ffffff;
+  --backBtnColor: #ffffff;
+
+  /* input */
+  --labelColor: rgba(255, 255, 255, 0.4);
+  --placehoderColor: rgba(255, 255, 255, 0.3);
+  --inputBorder: #5E5E5E;
+  --radioHoverColor: #cccccc;
+  --shipDescriptionColor: rgba(255, 255, 255, 0.4);
+  --radioBorderColor: #121212;
+  --radioShadowColor: #333333;
+  --radioBg:#333333;
+  --selectColor: #333333;
+  /* cartlist scrollbar */
+  --scrollBg: rgba(255, 255, 255, 0.5);
+  --scrollHoverBg: rgba(255, 255, 255, 1);
+
+  /* footer */
+  --footerBg: #333333;
+
+  /* Icons */
+  --alphaShop: url('./svg/header/ALPHA Shop_dark.svg');
+  --searchIcon: url('./svg/header/Search_dark.svg');
+  --cartIcon: url('./svg/header/Cart_dark.svg');
+  --darkModeIcon: url('./svg/header/DarkMode_dark.svg');
+  --logoName: url('./svg/header/ALPHA Shop_dark.svg');
+  --arrowL: url('./svg/main/ArrowL_dark.svg');
+  --minusIcon: url('./svg/main/Minus_dark.svg');
+  --plusIcon: url('./svg/main/Plus_dark.svg');
 }
 /* CSS RESET */
 * {
@@ -43,6 +106,7 @@ body {
   font-family: 'Inter', 'Noto Sans TC', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  color: var(--textColor);
 }
 
 ul,
@@ -53,4 +117,25 @@ li {
 a {
   text-decoration: none;
   color: var(--textColor);
+}
+
+.logoIcon {
+  display: inline-block;
+  width: 35px;
+  height: 30px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: var(--logoIcon);
+}
+
+.logoName {
+  margin: 3px 0 0 0;
+  display: inline-block;
+  width: 130px;
+  height: 30px;
+  background-image: var(--logoName);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

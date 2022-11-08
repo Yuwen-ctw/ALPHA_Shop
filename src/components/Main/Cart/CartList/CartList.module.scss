@@ -12,9 +12,9 @@
 
   &::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--scrollBg);
     &:hover {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: var(--scrollHoverBg);
     }
   }
 
@@ -54,8 +54,19 @@
           font-size: 0.875rem;
         }
 
-        img {
-          cursor: pointer;
+        span {
+          display: inline-block;
+          width: 27px;
+          height: 27px;
+          line-height: 27px;
+          &.plus {
+            background-image: var(--plusIcon);
+            cursor: pointer;
+          }
+          &.minus {
+            background-image: var(--minusIcon);
+            cursor: pointer;
+          }
         }
       }
 

@@ -131,18 +131,36 @@
       cursor: pointer;
       translate: -1px -1px;
     }
+    // 箭頭
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
   // button個別樣式
   .nextBtn {
     margin-left: auto;
     background-color: var(--nextBtnBg);
     color: var(--nextBtnColor);
+    .arrowR {
+      margin-left: 12px;
+      background-image: var(--arrowR);
+    }
   }
 
   .backBtn {
     justify-content: flex-start;
     background-color: var(--bg);
     color: var(--backBtnColor);
+    .arrowL {
+      margin-right: 12px;
+      background-image: var(--arrowL);
+    }
   }
 }
 

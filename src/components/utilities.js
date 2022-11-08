@@ -9,4 +9,11 @@ function numberWithCommas (num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
-export { numberWithCommas }
+function changeDarkMood (e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+}
+export { numberWithCommas, changeDarkMood }
