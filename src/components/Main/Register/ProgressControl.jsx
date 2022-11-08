@@ -41,9 +41,7 @@ function NextBtn ({ step, setStep }) {
     // 若當前為 step3 則更換文字，並移除箭頭圖標
     context = '確認下單'
     showArrow = ''
-    // 預期當step === 3 時，button type 要變更為 sumbit(冒號右側)，用以準備進行送出。
-    // 但當使用者剛進入 step3 時，chrome瀏覽器會告警(firefox則不會)，查資料後發現此錯誤是input欄位沒填妥，瀏覽器驗證表單後給出的告警，但使用者才剛進入 step3 還沒submit ...因暫時未解，故改為button。
-    type = 'buttom'
+    type = 'submit'
   }
 
   function handleClick () {
@@ -52,7 +50,7 @@ function NextBtn ({ step, setStep }) {
   return (
     <button
       type={type}
-      form='register'
+      form='register' //沒註解掉這行的話，當step進行到3時瀏覽器會告警(chorme)，目前懷疑是 React 執行兩次的關係，暫時查無解方。
       className={styles.nextBtn}
       onClick={handleClick}
     >
