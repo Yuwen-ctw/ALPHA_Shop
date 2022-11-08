@@ -1,3 +1,4 @@
+
 .header {
   position: relative;
   padding: 0 7.5%;
@@ -7,22 +8,30 @@
   gap: 25px;
   flex-direction: column;
   align-items: center;
-
+  transition: height 0.5s;
+  
   .NavToggleIcon {
     padding: 20px 0 40px 0;
-    display: block;
+    align-self: flex-start;
+    display: inline-block;
     width: 20px;
     height: 15px;
-    align-self: flex-start;
+    background-image: var(--navToggleIcon);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
   }
+
   .classMenu {
+    position: relative;
+    z-index: 999;
     width: 100%;
     visibility: hidden;
     display: flex;
     flex-direction: column;
     gap: 32px;
     text-align: center;
-
+    
     & > li {
       height: 72px;
       line-height: 72px;
@@ -53,18 +62,18 @@
     }
     .darkIcon {
       background-image: var(--darkModeIcon);
+      cursor: pointer;
     }
   }
   
   .logo {
     display: flex;
-    align-items: center;
     gap: 5px;
     width: 170px;
     position: absolute;
-    top: 50%;
+    top: 15px;
     left: 50%;
-    translate: -50% -50%;
+    translate: -50% 0;
   } 
 }
 

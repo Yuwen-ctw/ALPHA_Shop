@@ -20,9 +20,9 @@ function CartList ({ carts, setCarts }) {
     return (
       <div className={styles.cartItem} key={item.id}>
         <ItemDetail item={item}>
-          <span className={styles.minus} onClick={() => decreaseQuantity(item.id)}></span>
+          <span className={styles.minus} onClick={() => decreaseQuantity(item.id)} />
           <span className={styles.itemAmount}>{item.quantity}</span>
-          <span className={styles.plus} onClick={() => increaseQuantity(item.id)}></span>
+          <span className={styles.plus} onClick={() => increaseQuantity(item.id)} />
         </ItemDetail>
       </div>
     )

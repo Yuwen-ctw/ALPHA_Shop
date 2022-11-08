@@ -9,8 +9,10 @@ function Register () {
     <section className={styles.section_register}>
       <StepProgress step={step} />
       <StepContents step={step} />
-      <ProgressControl step={step} 
-        setStep={setStep}/>
+      <ProgressControl
+        step={step}
+        setStep={setStep}
+      />
     </section>
   )
 }
