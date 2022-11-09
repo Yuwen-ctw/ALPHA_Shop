@@ -5,6 +5,18 @@ import { useState } from 'react'
 
 function Cart () {
   const [carts, setCarts] = useState(cartItems)
+  // handlers
+  function handleIncreaseQuantity (itemId) {
+  setCarts(carts.map(item => item.id !== itemId
+    ? item : { ...item, quantity: item.quantity + 1 }))
+  }
+  function handleDecreaseQuantity (itemId) {
+    const nextCarts = carts.map(item => item.id !== itemId
+      ? item : { ...item, quantity: item.quantity - 1 })
+    // remove the item that quantity is zero
+    setCarts(nextCarts.filter(item => item.quantity > 0))
+  }
+
   // calculate props and pass to CartInfo
   const totalCost = numberWithCommas(
     carts.reduce((acc, current) => {
@@ -18,7 +30,9 @@ function Cart () {
   return (
     <section className={styles.section_cart}>
       <h4 className={styles.title}>購物籃</h4>
-      <CartList carts={carts} setCarts={setCarts} />
+      <CartList carts={carts} 
+        onIncrease={handleIncreaseQuantity}
+        onDecrease={handleDecreaseQuantity} />
       <CartInfo>
         <InfoItem text='運費' price={shipCost} />
         <InfoItem text='小計' price={totalCost} />

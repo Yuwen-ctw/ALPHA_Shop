@@ -1,28 +1,16 @@
 import styles from './CartList.module.scss'
 import { numberWithCommas } from '../../../utilities'
 
-function CartList ({ carts, setCarts }) {
-  function increaseQuantity (itemId) {
-    setCarts(carts.map(item => item.id !== itemId
-      ? item
-      : { ...item, quantity: item.quantity + 1 }))
-  }
-  function decreaseQuantity (itemId) {
-    const nextCarts = carts.map(item => item.id !== itemId
-      ? item
-      : { ...item, quantity: item.quantity - 1 })
-    // remove the item that quantity is zero
-    setCarts(nextCarts.filter(item => item.quantity > 0))
-  }
+function CartList ({ carts, onIncrease, onDecrease }) {
 
   let cartList = []
   cartList = carts.map(item => {
     return (
       <div className={styles.cartItem} key={item.id}>
         <ItemDetail item={item}>
-          <span className={styles.minus} onClick={() => decreaseQuantity(item.id)} />
+          <span className={styles.minus} onClick={() => onDecrease(item.id)} />
           <span className={styles.itemAmount}>{item.quantity}</span>
-          <span className={styles.plus} onClick={() => increaseQuantity(item.id)} />
+          <span className={styles.plus} onClick={() => onIncrease(item.id)} />
         </ItemDetail>
       </div>
     )
