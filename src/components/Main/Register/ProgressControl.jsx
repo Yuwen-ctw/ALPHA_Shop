@@ -1,6 +1,6 @@
 import styles from './Register.module.scss'
 
-function ProgressControl ({ step, onNext, onPrevious}) {
+function ProgressControl ({ step, onNext, onPrevious }) {
   return (
     <div className={styles.progressControl}>
       <hr className={styles.divider} />
@@ -44,15 +44,15 @@ function NextBtn ({ step, handleClick }) {
   }
 
   return (
-      <button
+    <button
       key={key}
       type={type}
       form='register'
       className={styles.nextBtn}
       onClick={handleClick}
-      >
-        {context}
-        {showArrow}
-      </button>
+    >
+      {context}
+      {showArrow}
+    </button>
   )
 }

@@ -2,7 +2,6 @@ import styles from './CartList.module.scss'
 import { numberWithCommas } from '../../../utilities'
 
 function CartList ({ carts, onIncrease, onDecrease }) {
-
   let cartList = []
   cartList = carts.map(item => {
     return (
