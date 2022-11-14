@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { numberWithCommas } from '../../utilities'
 import { CartContext } from '../../CartContext'
 import CartList from './CartList'
@@ -6,11 +6,14 @@ import styles from './Cart.module.scss'
 
 function Cart () {
   // get data from Context
-  const cartItems = useContext(CartContext)
+  const {
+    cartItems,
+    handleIncreaseQuantity,
+    handleDecreaseQuantity} = useContext(CartContext)
   // put data into state
-  const [carts, setCarts] = useState(cartItems)
+  // const [carts, setCarts] = useState(cartItems)
   // calculate prop and pass to CartInfo
-  const itemCost = carts.reduce((acc, current) => {
+  const itemCost = cartItems.reduce((acc, current) => {
       acc += (current.price * current.quantity)
       return acc
     }, 0)
@@ -19,23 +22,23 @@ function Cart () {
   const totalCost = numberWithCommas(itemCost + shipCost)
   
   // set handlers
-  function handleIncreaseQuantity (itemId) {
-    setCarts(carts.map(item => item.id !== itemId
-      ? item
-      : { ...item, quantity: item.quantity + 1 }))
-  }
-  function handleDecreaseQuantity (itemId) {
-    const nextCarts = carts.map(item => item.id !== itemId
-      ? item
-      : { ...item, quantity: item.quantity - 1 })
-    // remove the item that quantity is zero
-    setCarts(nextCarts.filter(item => item.quantity > 0))
-  }
+  // function handleIncreaseQuantity (itemId) {
+  //   setCartItems(cartItems.map(item => item.id !== itemId
+  //     ? item
+  //     : { ...item, quantity: item.quantity + 1 }))
+  // }
+  // function handleDecreaseQuantity (itemId) {
+  //   const nextCarts = cartItems.map(item => item.id !== itemId
+  //     ? item
+  //     : { ...item, quantity: item.quantity - 1 })
+  //   // remove the item that quantity is zero
+  //   setCartItems(nextCarts.filter(item => item.quantity > 0))
+  // }
   return (
     <section className={styles.section_cart}>
       <h4 className={styles.title}>購物籃</h4>
       <CartList
-        carts={carts}
+        carts={cartItems}
         onIncrease={handleIncreaseQuantity}
         onDecrease={handleDecreaseQuantity}
       />

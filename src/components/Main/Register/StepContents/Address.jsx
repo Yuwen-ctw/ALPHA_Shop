@@ -36,7 +36,7 @@ function Address ({ step }) {
         <div className={styles.formRow}>
           <label htmlFor='input-location'>縣市</label>
           <div className='select-wrap'>
-            <select id='select-location' name='location' required defaultValue=''>
+            <select id='select-location' name='location' defaultValue=''>
               <option value=''>請選擇縣市</option>
               <option value='KLU'>基隆市</option>
               <option value='TPH'>新北市</option>
