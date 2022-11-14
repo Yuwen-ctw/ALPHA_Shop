@@ -1,11 +1,24 @@
-import CartList from './CartList'
+import { useState, useContext } from 'react'
 import { numberWithCommas } from '../../utilities'
+import { CartContext } from '../../CartContext'
+import CartList from './CartList'
 import styles from './Cart.module.scss'
-import { useState } from 'react'
 
 function Cart () {
+  // get data from Context
+  const cartItems = useContext(CartContext)
+  // put data into state
   const [carts, setCarts] = useState(cartItems)
-  // handlers
+  // calculate prop and pass to CartInfo
+  const itemCost = carts.reduce((acc, current) => {
+      acc += (current.price * current.quantity)
+      return acc
+    }, 0)
+  // 待釐清免運費之商業邏輯
+  const shipCost = itemCost < 10 ? 120 : 0
+  const totalCost = numberWithCommas(itemCost + shipCost)
+  
+  // set handlers
   function handleIncreaseQuantity (itemId) {
     setCarts(carts.map(item => item.id !== itemId
       ? item
@@ -18,17 +31,6 @@ function Cart () {
     // remove the item that quantity is zero
     setCarts(nextCarts.filter(item => item.quantity > 0))
   }
-
-  // calculate props and pass to CartInfo
-  const totalCost = numberWithCommas(
-    carts.reduce((acc, current) => {
-      acc += (current.price * current.quantity)
-      return acc
-    }, 0)
-  )
-  // 待釐清免運費之商業邏輯
-  const shipCost = totalCost < 10 ? 120 : '免費'
-
   return (
     <section className={styles.section_cart}>
       <h4 className={styles.title}>購物籃</h4>
@@ -63,35 +65,9 @@ function InfoItem ({ text, price }) {
       </span>
 
       <span className={styles.infoPrice}>
-        {price === '免費' ? '免費' : `$${price}`}
+        {price === 0 ? '免費' : `$${price}`}
       </span>
     </div>
   )
 }
 
-// data
-const cartItems = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2
-  },
-
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1
-  },
-
-  {
-    id: '3',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1
-  }
-]
