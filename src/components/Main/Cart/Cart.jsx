@@ -18,8 +18,8 @@ function Cart () {
       acc += (current.price * current.quantity)
       return acc
     }, 0)
-    // 待釐清免運費之商業邏輯
-    const shipCost = itemsCost < 10 ? 120 : 0
+    // suppose the shipping cost
+    const shipCost = itemsCost < 200 ? 120 : 0
     const totalCost = numberWithCommas(itemsCost + shipCost)
     return { itemsCost, shipCost, totalCost }
   }
@@ -46,7 +46,7 @@ function Cart () {
     const nextCosts = calculateCosts(nextCarts)
     setFormData({ ...formData, totalCost: nextCosts.totalCost })
   }
-  
+
   return (
     <section className={styles.section_cart}>
       <h4 className={styles.title}>購物籃</h4>

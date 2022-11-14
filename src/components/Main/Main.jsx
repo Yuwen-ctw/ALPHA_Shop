@@ -8,12 +8,8 @@ function Main () {
   // get initial data from context
   const formDataContext = useContext(FormDataContext)
   const [formData, setFormData] = useState(formDataContext)
-  
-  // set handlers related with form data
-  function printFormData (formData) {
-    console.log(formData)
-  }
 
+  // set handler
   function handleFormChange (e) {
     const value = e.target.value
     const key = e.target.name
@@ -26,7 +22,6 @@ function Main () {
       <FormDataContext.Provider value={{
         formData,
         setFormData,
-        printFormData,
         handleFormChange
       }}
       >
