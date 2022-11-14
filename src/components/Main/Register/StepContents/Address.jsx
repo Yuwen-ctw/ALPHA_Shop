@@ -1,7 +1,10 @@
+import { useContext } from 'react'
+import { FormDataContext } from '../../../FormDataContext'
 import styles from './StepContents.module.scss'
 
 function Address ({ step }) {
   const showPhase = step === 1 ? '' : 'd-none'
+  const { handleFormChange } = useContext(FormDataContext)
   return (
     <div className={showPhase}>
       <h3 className={styles.title}>寄送地址</h3>
@@ -10,7 +13,12 @@ function Address ({ step }) {
         <div className={styles.formRow}>
           <label htmlFor='select-title'>稱謂</label>
           <div className='select-wrap'>
-            <select id='select-title' name='title' defaultValue='mr'>
+            <select
+              id='select-title'
+              name='title'
+              defaultValue='mr'
+              onChange={handleFormChange}
+            >
               <option value='mr'>先生</option>
               <option value='ms'>小姐</option>
               <option value='mx'>不明</option>
@@ -20,23 +28,41 @@ function Address ({ step }) {
 
         <div className={styles.formRow}>
           <label htmlFor='input-name'>姓名</label>
-          <input type='text' id='input-name' name='name' placeholder='請輸入姓名' />
+          <input
+            type='text'
+            id='input-name'
+            name='name'
+            placeholder='請輸入姓名'
+            onChange={handleFormChange}
+          />
         </div>
 
         <div className={styles.formRow}>
           <label htmlFor='input-phone'>電話</label>
-          <input type='tel' id='input-phone' name='phone' placeholder='請輸入行動電話' />
+          <input
+            type='tel'
+            id='input-phone'
+            name='phone'
+            placeholder='請輸入行動電話'
+            onChange={handleFormChange}
+          />
         </div>
 
         <div className={styles.formRow}>
           <label htmlFor='input-email'>Email</label>
-          <input type='email' id='input-email' name='email' placeholder='請輸入電子郵件' />
+          <input
+            type='email'
+            id='input-email'
+            name='email'
+            placeholder='請輸入電子郵件'
+            onChange={handleFormChange}
+          />
         </div>
 
         <div className={styles.formRow}>
           <label htmlFor='input-location'>縣市</label>
           <div className='select-wrap'>
-            <select id='select-location' name='location' defaultValue=''>
+            <select id='select-location' name='location' defaultValue='' onChange={handleFormChange}>
               <option value=''>請選擇縣市</option>
               <option value='KLU'>基隆市</option>
               <option value='TPH'>新北市</option>
@@ -73,7 +99,13 @@ function Address ({ step }) {
 
         <div className={styles.formRow}>
           <label htmlFor='input-address'>地址</label>
-          <input type='text' id='input-address' name='address' placeholder='請輸入地址' />
+          <input
+            type='text'
+            id='input-address'
+            name='address'
+            placeholder='請輸入地址'
+            onChange={handleFormChange}
+          />
         </div>
       </div>
     </div>

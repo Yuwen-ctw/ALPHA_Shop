@@ -1,11 +1,14 @@
+import { useContext } from 'react'
+import { FormDataContext } from '../../../FormDataContext'
 import styles from './StepContents.module.scss'
 function Shipping ({ step }) {
   const showPhase = step === 2 ? '' : 'd-none'
+  const { handleFormChange } = useContext(FormDataContext)
   return (
     <div className={showPhase}>
       <h3 className={styles.title}>運送方式</h3>
       <div className={styles._shippingPhase}>
-        <div className={styles.formRow}>
+        <div className={styles.formRow} onChange={handleFormChange}>
           <InputRadioWrapper>
             <input type='radio' value='standard' name='shipping' defaultChecked />
             <InputRadioDetail telt='標準運送' description='約 3~7 個工作天' price='免費' />
